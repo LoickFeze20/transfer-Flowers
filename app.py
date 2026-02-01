@@ -82,7 +82,7 @@ CONSEILS = {
 # 4. LOGIQUE DU MODÈLE
 @st.cache_resource
 def load_my_model():
-    return tf.keras.models.load_model('model_vgg16.h5')
+    return tf.keras.models.load_model('model_lenet.h5')
 
 model = load_my_model()
 classes = list(CONSEILS.keys())
@@ -146,4 +146,5 @@ if uploaded_file is not None:
 if st.session_state.history:
     st.write("---")
     st.subheader("📁 Historique des comparaisons de la session")
+
     st.table(st.session_state.history)
